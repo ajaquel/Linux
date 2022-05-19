@@ -1,0 +1,26 @@
+Command	Description
+$ groupadd {new group name}	Creates group
+$ chown {ownername}:{groupname} {filename}	Assigns filename new owner and group attributes
+$ adduser {username} {groupname}	Creates a new user and assign it to a group (group must be created already)
+$ cat /etc/shells	Query available shells in system
+$ grep {username} /etc/passwd	Query and changes the shell for {username}
+$ usermod --shell /bin/bash {username}
+$ grep {username} /etc/passwd	Query and changes the shell for {username}
+$ chsh --shell /bin/bash {username}
+$ nano /etc/passwd	Edit {username} line with the updated shell
+	
+$ who	Shows you who is currently logged onto a system.
+$ w	Shows a significant amount of information concerning logged-in users.
+$ last	Provides current and historical data concerning users logging into and out of your system.
+$ lastb
+$ lastlog	Pulls data from the /var/log/lastlog file.
+$ getfacl scripts/qldap.sh	Check file access rights for other users
+# file: scripts/qldap.sh
+# owner: userid
+# group: users
+user::rwx
+user:userid:rwx
+group::r-x
+mask::rwx
+other::--x
+$ setfacl -Rm u:userid:rwx /home/userid/scripts/qldap.sh	Set file access rights for other users

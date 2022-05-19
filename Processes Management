@@ -1,0 +1,18 @@
+Command	Description
+$ top	Shows top processes running in real-time
+$ top | grep {string}	Shows {process} running in real-time
+$ ps aux	Shows all processes running not in real-time
+$ ps aux | grep {string}	Filter processes ID's  names that matches with string.
+$ ps -aef | grep -i {string}	Filter processes ID's  names that matches with string.
+$ pgrep {string}	Filter processes name matching string but giving out only process ID's numbers
+# ps -ef | grep {OpenStack service}	Status process status of OpenStack service
+$ pstree	Displays a tree of the processes. Snapshot of the running processes
+
+$ kill -9 {pid}	Kills a particular process ID
+$ kill -9 {pid} {pid} …	Kills all mentioned processes ID
+$ killall {process ID command name}	Kills all processes with command name listed in top command
+
+$ sudo service {program name} start	Starts program
+$ uptime	It checks… 
+load average: 1300.54, 1288.09, 1255.08 (high)
+load average: 3.25, 1.22, 0.45 (normal)

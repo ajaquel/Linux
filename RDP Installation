@@ -1,0 +1,9 @@
+On Admin Machine:
+Install Microsoft Remote Desktop APP (Windows, Mac, etc.)
+
+On Remote Linux Machines:
+$ sudo apt install xrdp
+$ sudo systemctl enable xrdp
+
+On Admin Machine:
+Add remote machines as PCs.

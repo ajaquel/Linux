@@ -1,0 +1,29 @@
+1. On LOCAL Host
+1a. Create both keys
+ssh-keygen -t rsa -b 2048 -v
+
+1b. Rename file without extension adding .pem
+mv keyname keyname.pem
+
+1c. Copy content from .pub file
+cat keyname.pub
+
+
+2. On REMOTE Host
+2a. Create or Edit ~/.ssh/authorized_keys adding the new key
+sudo nano ~/.ssh/authorized_keys   # Add ssh-rsa .... key from 1c in the next line.
+
+2b. Create a copy of the .pub file
+sudo nano keyname.pub  # Paste the content from 1c.
+
+2c. Restart SSHD service
+sudo service sshd restart
+
+Note: 
+Remote server also can be updated from local server
+
+for i in {remote server};
+do
+  echo "sending file to $i"; 
+  cat ~/Desktop/id_rsa.pub | ssh -p 22 user@$i "cat &gt;&gt; .ssh/authorized_keys"; 
+done;
