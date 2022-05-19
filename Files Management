@@ -1,0 +1,70 @@
+Command	Description
+$ pwd	Shows current directory location
+$ ls 	List files
+$ ls -l > {output_filename}	List files and redirect the output to a file
+$ ll -rt	List files sorting by date/time
+$ ls -l| tee {output_filename}	Redirect the output to a file while still seeing it on screen
+$ cd ~	Change directory to home
+$ mkdir {directory_name}	Make directory
+$ rm -d {directory_name}	Deletes an empty directory
+$ rm -r {directory_name}	Deletes a directory with all its files
+$ cp {filename}	Copy file
+$ mv {current_filename} {new_filename}	Rename a file
+$ mv {filename} [/]{new_directory}/{filename or new_filename}	Move a file (or move it and rename it)
+$ rm {filename}	Remove file
+
+$ diff {filename 1} {filename 2} > dev/null && echo Pass || echo Fail	Compares 2 files and echoes Pass/Fail
+
+$ df	report file system disk space usage
+$ du	estimate file space usage
+$ du -ha --time /var/lib/nova	Check usage for every nova subfolder/file
+$ cat /etc/fstab	Static file system information
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+/dev/mapper/ubuntu--vg-root /               ext4    errors=remount-ro 0       1
+# /boot was on /dev/sda1 during installation
+UUID=e79f4467-d0c2-4148-a5e3-932fe65948b7 /boot           ext2    defaults        0       2
+/dev/mapper/ubuntu--vg-swap_1 none            swap    sw              0       0
+/dev/fd0        /media/floppy0  auto    rw,user,noauto,exec,utf8 0       0
+#/dev/sdc1       /home  ext3 defaults 1 2
+#/dev/mapper/VolGroup01-StagingVol  /staging ext4 defaults 1 2
+#/dev/mapper/VolGroup01-TOOLSdata /data ext4 defaults 1 2
+/dev/sdf1       /home   xfs defaults 1 2
+/dev/mapper/VolGroup01-StagingVol /staging ext4 defaults 1 2
+$ blkid -k	List all known filesystems and RAIDs and exit
+
+$ touch {filename} {filename} {filename} {filename} {filename} {filename} …	Creates several files at once
+
+$ find . {arguments}	Search within current directory (.)
+$ find / {arguments}	Search all directories from Root (/)
+$ find . -type d -name "{search string}"	Find directories
+$ find / -type f -name "*.txt"	Find files case sensitive
+$ find . -type f -iname "*.txt"	Find files ignoring case
+$ find / -type f -not -iname "*.txt"	Find files without the specified name
+$ find . -type f -iname "*.php" -exec grep -i -n "hola" {} +	Find in all php files any that has "hola" in it
+$ whereis {filename}	Shows where a file is located
+$ which {filename}	Only searches along the path variable
+$ locate {filename}	Searches across automatic previously created DB in linux (Run updatedb first)
+$ updatedb	It updates the DB which is used by locate filename
+
+$ cat {filename} | grep i -n "{string to find within file}"	Search for string within a known file
+$ grep "{string to find within a file}" ./*	./* => search in all the files in current directory
+$ grep "{string to find within a file}" {file where to look}	Search in particular file in the current directory
+$ grep -i "{string to find within a file}" {file where to look}	"-i" to ignore the case
+$ grep -n -i "{string to find within a file}" ./*	Shows in what line within the files the string was found
+
+$ tail -f {filename / log filename}	Reads a file's activity real-time
+.	.
+$ sudo mkdir /media/usb	.
+$ sudo mount /dev/sdc1 /media/usb	.
+$ sudo umount /dev/sdc1 /media/usb	.
+
+$ view {filename}	Files viewer
+$ vi {filename}	Files editor
+$ leafpad {filename}	Files editor
+$ nano {filename}	Files editor
