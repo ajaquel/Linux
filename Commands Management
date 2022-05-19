@@ -1,0 +1,8 @@
+Command	Description
+$ history	
+$ !{history command #}	
+$ lastlog | grep -v Never| grep Dec 	lastlog - reports the most recent login of all users or of a given user.
+
+
+$ last -x	Checks last events in the system with user ids info
+$ sudo cat /var/log/auth.log | grep userid	Check user's auth log into the server
