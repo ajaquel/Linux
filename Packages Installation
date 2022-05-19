@@ -1,0 +1,9 @@
+Command	Description
+$ sudo apt-cache policy {package/program name}	Checks for installation status of package/program name
+$ sudo apt-get install {package/program name}	Installs the package name/program name
+$ sudo apt-get remove {package/program name}	Removes the package/program name
+$ sudo apt-get update --fix-missing	Update programs/libraries fixing the missing ones
+$ sudo dpkg-query -l | grep {package name}	Queries if package is installed
+$ sudo dpkg -I {.deb package file}	Gives information about package
+$ sudo dpkg -i {.deb package file}	Installs package
+$ sudo dpkg -P {package name}	Uninstall / purge package
